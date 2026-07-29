@@ -29,7 +29,7 @@ export const services = [
     titleHindi: "लाइट्स डेकोरेशन",
     shortDesc: "शाही लाइटिंग, एलईडी टनल, झूमर और एंबियंट स्टेज लाइटिंग सिस्टम।",
     fullDesc: "Give your venue an enchanting royal glow with our custom ceiling lights, fairy light tunnels, luxury chandeliers, sharp focus spotlights, and dynamic LED wedding theme lighting.",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200",
+    image: "/gallery/lights_real.jpg",
     features: ["Fairy Light Tunnels & Canopies", "Royal Chandeliers & Vintage Bulbs", "RGB LED Theme Stage Lighting", "Architectural Focus Spots"]
   },
   {
@@ -73,7 +73,7 @@ export const services = [
     titleHindi: "दुल्हन एंट्री एवं गेट",
     shortDesc: "शाही दुल्हन एंट्री, ब्राइडल फूलों की चादर, कोल्ड पायरो व ग्रैंड वॉकवे।",
     fullDesc: "Make a breathtaking royal bride & groom entry with illuminated floral walkways, sparkling cold pyros, traditional phoolon ki chaadar, dry ice smoke effect, and grand entryway arches.",
-    image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=1200",
+    image: "/gallery/entry_real.jpg",
     features: ["Bridal Phoolon Ki Chaadar", "Cold Pyro & Dry Ice Fog", "Illuminated Floral Walkways", "Grand Royal Gate Arches"]
   },
   {
@@ -124,6 +124,20 @@ export const galleryItems = [
     category: "Stage",
     image: "/gallery/gallery5.jpg",
     desc: "रंग-बिरंगे फूलों और वार्म बल्ब कैनोपी से सजा मंडप — गणेश पूजा व शादी के लिए आदर्श डेकोरेशन।"
+  },
+  {
+    id: 6,
+    title: "Grand Floral Walkway & Chandelier Stage",
+    category: "Dulhan Entry",
+    image: "/gallery/entry_real.jpg",
+    desc: "झूमरों से सजा भव्य फूलों का वॉकवे — रॉयल दुल्हन एंट्री के लिए परफेक्ट इल्यूमिनेटेड पाथवे।"
+  },
+  {
+    id: 7,
+    title: "Warm Golden String Light Illumination",
+    category: "Lights",
+    image: "/gallery/gallery7.jpg",
+    desc: "सुनहरी वार्म स्ट्रिंग लाइट्स और ब्लू LED से जगमगाती इमारत — शादी और उत्सव के लिए शानदार लाइटिंग।"
   }
 ];
 

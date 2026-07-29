@@ -84,22 +84,22 @@ const Contact = () => {
               {/* Phone Card 1 */}
               <a
                 href={`tel:${businessInfo.phones[0]}`}
-                className="group flex items-center justify-between p-5 rounded-2xl bg-[#120a08] border border-gold-500/30 hover:border-gold-400 hover:bg-gold-500/10 transition-all duration-300 shadow-lg"
+                className="group flex flex-wrap items-center justify-between gap-3 p-5 rounded-2xl bg-[#120a08] border border-gold-500/30 hover:border-gold-400 hover:bg-gold-500/10 transition-all duration-300 shadow-lg"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gold-gradient p-0.5 shadow-md group-hover:scale-110 transition-transform">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-gold-gradient p-0.5 shadow-md group-hover:scale-110 transition-transform">
                     <div className="w-full h-full rounded-xl bg-black flex items-center justify-center text-gold-400">
                       <PhoneCall className="w-5 h-5" />
                     </div>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[11px] font-mono text-gold-400 uppercase tracking-wider block">Primary Phone</span>
-                    <span className="text-xl font-bold font-serif text-white group-hover:text-gold-300 transition-colors">
+                    <span className="text-lg sm:text-xl font-bold font-serif text-white group-hover:text-gold-300 transition-colors break-all">
                       {businessInfo.phones[0]}
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-bold text-black bg-gold-gradient px-4 py-2 rounded-full uppercase tracking-wider group-hover:scale-105 transition-transform">
+                <span className="shrink-0 text-xs font-bold text-black bg-gold-gradient px-4 py-2 rounded-full uppercase tracking-wider group-hover:scale-105 transition-transform">
                   Call Now
                 </span>
               </a>
@@ -107,20 +107,20 @@ const Contact = () => {
               {/* Phone Card 2 */}
               <a
                 href={`tel:${businessInfo.phones[1]}`}
-                className="group flex items-center justify-between p-5 rounded-2xl bg-[#120a08] border border-gold-500/30 hover:border-gold-400 hover:bg-gold-500/10 transition-all duration-300 shadow-lg"
+                className="group flex flex-wrap items-center justify-between gap-3 p-5 rounded-2xl bg-[#120a08] border border-gold-500/30 hover:border-gold-400 hover:bg-gold-500/10 transition-all duration-300 shadow-lg"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-maroon-900 border border-gold-500/30 p-0.5 shadow-md group-hover:scale-110 transition-transform flex items-center justify-center text-gold-400">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-maroon-900 border border-gold-500/30 p-0.5 shadow-md group-hover:scale-110 transition-transform flex items-center justify-center text-gold-400">
                     <PhoneCall className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[11px] font-mono text-gold-400 uppercase tracking-wider block">Alternate Phone</span>
-                    <span className="text-xl font-bold font-serif text-white group-hover:text-gold-300 transition-colors">
+                    <span className="text-lg sm:text-xl font-bold font-serif text-white group-hover:text-gold-300 transition-colors break-all">
                       {businessInfo.phones[1]}
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-semibold text-gold-300 border border-gold-500/40 px-4 py-2 rounded-full uppercase tracking-wider group-hover:bg-gold-500/20 transition-all">
+                <span className="shrink-0 text-xs font-semibold text-gold-300 border border-gold-500/40 px-4 py-2 rounded-full uppercase tracking-wider group-hover:bg-gold-500/20 transition-all">
                   Call Now
                 </span>
               </a>
@@ -130,20 +130,20 @@ const Contact = () => {
                 href={businessInfo.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-purple-900/40 via-pink-900/30 to-amber-900/40 border border-pink-500/30 hover:border-pink-400 transition-all duration-300 shadow-lg"
+                className="group flex flex-wrap items-center justify-between gap-3 p-5 rounded-2xl bg-gradient-to-r from-purple-900/40 via-pink-900/30 to-amber-900/40 border border-pink-500/30 hover:border-pink-400 transition-all duration-300 shadow-lg"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-0.5 shadow-md group-hover:scale-110 transition-transform flex items-center justify-center text-white">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-0.5 shadow-md group-hover:scale-110 transition-transform flex items-center justify-center text-white">
                     <InstagramIcon className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[11px] font-mono text-pink-300 uppercase tracking-wider block">Follow Us On Instagram</span>
-                    <span className="text-sm font-bold font-sans text-white group-hover:text-pink-300 transition-colors">
+                    <span className="text-sm font-bold font-sans text-white group-hover:text-pink-300 transition-colors break-all">
                       @nk_electrician_149
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-semibold text-pink-200 bg-pink-500/20 border border-pink-500/40 px-4 py-2 rounded-full uppercase tracking-wider">
+                <span className="shrink-0 text-xs font-semibold text-pink-200 bg-pink-500/20 border border-pink-500/40 px-4 py-2 rounded-full uppercase tracking-wider">
                   Visit Profile
                 </span>
               </a>

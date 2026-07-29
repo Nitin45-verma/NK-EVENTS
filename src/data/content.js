@@ -40,7 +40,7 @@ export const services = [
     titleHindi: "फूलों की सजावट",
     shortDesc: "ताजे प्राकृतिक गुलाब, गेंदा और ऑर्किड से बनी आकर्षक जयमाला व मंडप सजावट।",
     fullDesc: "Transform your celebration with fragrant fresh flowers, premium marigold cascades, orchid arches, grand wedding mandaps, and bespoke car decorations.",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200",
+    image: "/gallery/gallery2.jpg",
     features: ["Fresh Flower Mandaps", "Bespoke Floral Entrance Arches", "Jai Mala Stage & Car Decoration", "Table Centerpieces & Flower Aisles"]
   },
   {
@@ -62,7 +62,7 @@ export const services = [
     titleHindi: "रॉयल स्टेज सजावट",
     shortDesc: "रॉयल थ्रोन बैकड्रॉप, मखमली कर्टेन, ब्रास पॉट्स और रॉयल वेडिंग स्टेज setups।",
     fullDesc: "Create grand photo backdrop stages for bride & groom with gold metallic pillars, plush velvet couches, flower walls, and crystal chandelier backdrops.",
-    image: "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=1200",
+    image: "/gallery/gallery1.jpg",
     features: ["Royal Velvet Backdrops", "Luxury Bride & Groom Sofa", "Brass Urli & Kalash Setup", "Crystal & Acrylic Panels"]
   },
   {
@@ -84,7 +84,7 @@ export const services = [
     titleHindi: "पार्टी एवं शुभ अवसर",
     shortDesc: "रिंग सेरेमनी, सगाई, बर्थडे पार्टी, एनिवर्सरी और थीम बेस्ड डेकोरेशन।",
     fullDesc: "Tailor-made decor for haldi, mehendi, sangeet, ring ceremony, baby shower, and birthday parties with vibrant color palettes and modern aesthetic props.",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=1200",
+    image: "/gallery/gallery3.jpg",
     features: ["Vibrant Haldi / Mehendi Decor", "Ring Ceremony Balloon & Flower Arches", "Theme Birthday Setup", "Photobooth & Prop Station"]
   }
 ];

@@ -1,3 +1,14 @@
+// ── Gallery image imports (processed & hashed by Vite) ──────────────────────
+import imgGallery1   from '../assets/gallery/gallery1.jpg';
+import imgGallery2   from '../assets/gallery/gallery2.jpg';
+import imgGallery3   from '../assets/gallery/gallery3.jpg';
+import imgGallery4   from '../assets/gallery/gallery4.jpg';
+import imgGallery5   from '../assets/gallery/gallery5.jpg';
+import imgGallery7   from '../assets/gallery/gallery7.jpg';
+import imgEntryReal  from '../assets/gallery/entry_real.jpg';
+import imgLightsReal from '../assets/gallery/lights_real.jpg';
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const businessInfo = {
   name: "NK EVENTS",
   owner: "Nitesh Verma",
@@ -29,7 +40,7 @@ export const services = [
     titleHindi: "लाइट्स डेकोरेशन",
     shortDesc: "शाही लाइटिंग, एलईडी टनल, झूमर और एंबियंट स्टेज लाइटिंग सिस्टम।",
     fullDesc: "Give your venue an enchanting royal glow with our custom ceiling lights, fairy light tunnels, luxury chandeliers, sharp focus spotlights, and dynamic LED wedding theme lighting.",
-    image: "/gallery/lights_real.jpg",
+    image: imgLightsReal,
     features: ["Fairy Light Tunnels & Canopies", "Royal Chandeliers & Vintage Bulbs", "RGB LED Theme Stage Lighting", "Architectural Focus Spots"]
   },
   {
@@ -40,7 +51,7 @@ export const services = [
     titleHindi: "फूलों की सजावट",
     shortDesc: "ताजे प्राकृतिक गुलाब, गेंदा और ऑर्किड से बनी आकर्षक जयमाला व मंडप सजावट।",
     fullDesc: "Transform your celebration with fragrant fresh flowers, premium marigold cascades, orchid arches, grand wedding mandaps, and bespoke car decorations.",
-    image: "/gallery/gallery2.jpg",
+    image: imgGallery2,
     features: ["Fresh Flower Mandaps", "Bespoke Floral Entrance Arches", "Jai Mala Stage & Car Decoration", "Table Centerpieces & Flower Aisles"]
   },
   {
@@ -62,7 +73,7 @@ export const services = [
     titleHindi: "रॉयल स्टेज सजावट",
     shortDesc: "रॉयल थ्रोन बैकड्रॉप, मखमली कर्टेन, ब्रास पॉट्स और रॉयल वेडिंग स्टेज setups।",
     fullDesc: "Create grand photo backdrop stages for bride & groom with gold metallic pillars, plush velvet couches, flower walls, and crystal chandelier backdrops.",
-    image: "/gallery/gallery1.jpg",
+    image: imgGallery1,
     features: ["Royal Velvet Backdrops", "Luxury Bride & Groom Sofa", "Brass Urli & Kalash Setup", "Crystal & Acrylic Panels"]
   },
   {
@@ -73,7 +84,7 @@ export const services = [
     titleHindi: "दुल्हन एंट्री एवं गेट",
     shortDesc: "शाही दुल्हन एंट्री, ब्राइडल फूलों की चादर, कोल्ड पायरो व ग्रैंड वॉकवे।",
     fullDesc: "Make a breathtaking royal bride & groom entry with illuminated floral walkways, sparkling cold pyros, traditional phoolon ki chaadar, dry ice smoke effect, and grand entryway arches.",
-    image: "/gallery/entry_real.jpg",
+    image: imgEntryReal,
     features: ["Bridal Phoolon Ki Chaadar", "Cold Pyro & Dry Ice Fog", "Illuminated Floral Walkways", "Grand Royal Gate Arches"]
   },
   {
@@ -84,7 +95,7 @@ export const services = [
     titleHindi: "पार्टी एवं शुभ अवसर",
     shortDesc: "रिंग सेरेमनी, सगाई, बर्थडे पार्टी, एनिवर्सरी और थीम बेस्ड डेकोरेशन।",
     fullDesc: "Tailor-made decor for haldi, mehendi, sangeet, ring ceremony, baby shower, and birthday parties with vibrant color palettes and modern aesthetic props.",
-    image: "/gallery/gallery3.jpg",
+    image: imgGallery3,
     features: ["Vibrant Haldi / Mehendi Decor", "Ring Ceremony Balloon & Flower Arches", "Theme Birthday Setup", "Photobooth & Prop Station"]
   }
 ];
@@ -94,49 +105,49 @@ export const galleryItems = [
     id: 1,
     title: "Neon Floral Stage Setup",
     category: "Stage",
-    image: "/gallery/gallery1.jpg",
+    image: imgGallery1,
     desc: "शाही नियॉन लाइट्स और फूलों से सजा भव्य स्टेज — रॉयल सोफे के साथ परफेक्ट शादी का सेटअप।"
   },
   {
     id: 2,
     title: "Yellow & Magenta Flower Stage",
     category: "Stage",
-    image: "/gallery/gallery2.jpg",
+    image: imgGallery2,
     desc: "पीले-गुलाबी कर्टेन, रंग-बिरंगे फूलों और वेलवेट सोफे से सजा रॉयल वेडिंग स्टेज।"
   },
   {
     id: 3,
     title: "Mehendi Flower Ring Decor",
     category: "Flowers",
-    image: "/gallery/gallery3.jpg",
+    image: imgGallery3,
     desc: "गुलाब और गेंदे के फूलों से बनी खूबसूरत मेहंदी रिंग — हल्दी और मेहंदी सेरेमनी के लिए परफेक्ट।"
   },
   {
     id: 4,
     title: "Blue LED Building Illumination",
     category: "Lights",
-    image: "/gallery/gallery4.jpg",
+    image: imgGallery4,
     desc: "ब्लू-पर्पल एलईडी लाइट्स से जगमगाती बिल्डिंग — नाइट सेलिब्रेशन के लिए शानदार लाइटिंग सेटअप।"
   },
   {
     id: 5,
     title: "Colorful Mandap with Bulb Canopy",
     category: "Stage",
-    image: "/gallery/gallery5.jpg",
+    image: imgGallery5,
     desc: "रंग-बिरंगे फूलों और वार्म बल्ब कैनोपी से सजा मंडप — गणेश पूजा व शादी के लिए आदर्श डेकोरेशन।"
   },
   {
     id: 6,
     title: "Grand Floral Walkway & Chandelier Stage",
     category: "Dulhan Entry",
-    image: "/gallery/entry_real.jpg",
+    image: imgEntryReal,
     desc: "झूमरों से सजा भव्य फूलों का वॉकवे — रॉयल दुल्हन एंट्री के लिए परफेक्ट इल्यूमिनेटेड पाथवे।"
   },
   {
     id: 7,
     title: "Warm Golden String Light Illumination",
     category: "Lights",
-    image: "/gallery/gallery7.jpg",
+    image: imgGallery7,
     desc: "सुनहरी वार्म स्ट्रिंग लाइट्स और ब्लू LED से जगमगाती इमारत — शादी और उत्सव के लिए शानदार लाइटिंग।"
   }
 ];

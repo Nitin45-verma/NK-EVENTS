@@ -92,87 +92,38 @@ export const services = [
 export const galleryItems = [
   {
     id: 1,
-    title: "Royal Mandap Lights",
-    category: "Lights",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200",
-    desc: "Golden warm chandeliers and light ceiling canopy for night wedding."
+    title: "Neon Floral Stage Setup",
+    category: "Stage",
+    image: "/gallery/gallery1.jpg",
+    desc: "शाही नियॉन लाइट्स और फूलों से सजा भव्य स्टेज — रॉयल सोफे के साथ परफेक्ट शादी का सेटअप।"
   },
   {
     id: 2,
-    title: "Fresh Rose & Orchid Stage",
-    category: "Flowers",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200",
-    desc: "Luxury flower backdrop with fresh red roses and exotic white orchids."
+    title: "Yellow & Magenta Flower Stage",
+    category: "Stage",
+    image: "/gallery/gallery2.jpg",
+    desc: "पीले-गुलाबी कर्टेन, रंग-बिरंगे फूलों और वेलवेट सोफे से सजा रॉयल वेडिंग स्टेज।"
   },
   {
     id: 3,
-    title: "High Energy Sangeet DJ Setup",
-    category: "DJ",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200",
-    desc: "Concert style DJ sound system with moving beam lights & fog effect."
+    title: "Mehendi Flower Ring Decor",
+    category: "Flowers",
+    image: "/gallery/gallery3.jpg",
+    desc: "गुलाब और गेंदे के फूलों से बनी खूबसूरत मेहंदी रिंग — हल्दी और मेहंदी सेरेमनी के लिए परफेक्ट।"
   },
   {
     id: 4,
-    title: "Luxury Mandap & Throne Stage",
-    category: "Stage",
-    image: "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=1200",
-    desc: "Gold pillars, crystal chandeliers and velvet sofa throne stage."
+    title: "Blue LED Building Illumination",
+    category: "Lights",
+    image: "/gallery/gallery4.jpg",
+    desc: "ब्लू-पर्पल एलईडी लाइट्स से जगमगाती बिल्डिंग — नाइट सेलिब्रेशन के लिए शानदार लाइटिंग सेटअप।"
   },
   {
     id: 5,
-    title: "Grand Dulhan Entry Arch",
-    category: "Dulhan Entry",
-    image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=1200",
-    desc: "Royal bridal entryway arch with cold pyros and floral walkway."
-  },
-  {
-    id: 6,
-    title: "Golden Ceiling Light Canopy",
-    category: "Lights",
-    image: "https://images.unsplash.com/photo-1508997449629-303059a039c0?auto=format&fit=crop&q=80&w=1200",
-    desc: "Sparkling gold warm bulb ceiling setup for open ground reception."
-  },
-  {
-    id: 7,
-    title: "Yellow Marigold Haldi Decor",
-    category: "Flowers",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200",
-    desc: "Traditional Indian marigold flower backdrop and brass urli for Haldi ceremony."
-  },
-  {
-    id: 8,
-    title: "Night Wedding Lighting Illusion",
-    category: "Lights",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200",
-    desc: "Ambient fairy light tunnel for royal bride and groom welcome."
-  },
-  {
-    id: 9,
-    title: "Grand Wedding Reception Stage",
+    title: "Colorful Mandap with Bulb Canopy",
     category: "Stage",
-    image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1200",
-    desc: "Romantic candle and flower wall backdrop for grand reception."
-  },
-  {
-    id: 10,
-    title: "Laser Light Sangeet Night DJ",
-    category: "DJ",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1200",
-    desc: "Laser light show and smoke machine setup for sangeet party night."
-  },
-  {
-    id: 11,
-    title: "Bridal Floral Entry Tunnel",
-    category: "Dulhan Entry",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=1200",
-    desc: "Floral pathway with warm fairy light archways for bride and groom entry."
-  },
-  {
-    id: 12,
-    title: "Traditional Brass & Flower Mandap",
-    category: "Flowers",
-    image: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1200",
-    desc: "Authentic Vedic mandap decoration with lotus, rose and brass diyas."
+    image: "/gallery/gallery5.jpg",
+    desc: "रंग-बिरंगे फूलों और वार्म बल्ब कैनोपी से सजा मंडप — गणेश पूजा व शादी के लिए आदर्श डेकोरेशन।"
   }
 ];
 

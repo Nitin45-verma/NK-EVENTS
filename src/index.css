@@ -10,7 +10,7 @@
   --color-gold-500: #d4af37;
   --color-gold-600: #b8860b;
   --color-gold-700: #aa7c11;
-  
+
   --color-maroon-950: #18050d;
   --color-maroon-900: #2c0818;
   --color-maroon-800: #4a0e2e;
@@ -78,24 +78,53 @@ img {
 }
 
 @keyframes goldShimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes goldPulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.35); }
-  50% { box-shadow: 0 0 38px rgba(245, 196, 81, 0.75); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 0 38px rgba(245, 196, 81, 0.75);
+  }
 }
 
 @keyframes floatSlow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes glowBorderPulse {
-  0%, 100% { border-color: rgba(212, 175, 55, 0.3); }
-  50% { border-color: rgba(245, 196, 81, 0.8); }
+
+  0%,
+  100% {
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  50% {
+    border-color: rgba(245, 196, 81, 0.8);
+  }
 }
 
 .animate-gold-pulse {
@@ -122,13 +151,16 @@ img {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #d4af37, #4a0e2e);
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #f5c451, #6b1140);
 }

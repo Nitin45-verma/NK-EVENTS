@@ -98,29 +98,29 @@ const Hero = () => {
           className="w-full flex flex-col items-center"
         >
           {/* Top Badge */}
-          <motion.div variants={itemVariants} className="mb-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon-900/80 border border-gold-500/40 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.25)]">
-              <Sparkles className="w-4 h-4 text-gold-400 animate-spin-slow" />
-              <span className="text-xs md:text-sm font-semibold tracking-wider text-gold-300 uppercase">
+          <motion.div variants={itemVariants} className="mb-3 sm:mb-4 max-w-full px-2">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-maroon-900/80 border border-gold-500/40 backdrop-blur-md animate-glow-border shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 animate-spin-slow shrink-0" />
+              <span className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-normal sm:tracking-wider text-gold-300 uppercase truncate">
                 Premier Event &amp; Mandap Decorators
               </span>
-              <Sparkles className="w-4 h-4 text-gold-400 animate-spin-slow" />
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 animate-spin-slow shrink-0" />
             </div>
           </motion.div>
 
-          {/* Main Title — uppercase, responsive sizes */}
+          {/* Main Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif font-black tracking-tight text-gold-gradient drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] my-2 uppercase"
+            className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-serif font-black tracking-tight text-gold-gradient drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] my-1 sm:my-2 uppercase"
           >
             NK Events
             <span className="sr-only"> - Wedding &amp; Event Decoration</span>
           </motion.h1>
 
-          {/* Hindi Tagline — decorative, not a heading */}
+          {/* Hindi Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-xl xs:text-2xl sm:text-4xl md:text-5xl font-hindi font-bold text-slate-100 tracking-wide mt-2 mb-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
+            className="text-xl sm:text-4xl md:text-5xl font-hindi font-bold text-slate-100 tracking-wide mt-1 sm:mt-2 mb-3 sm:mb-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
           >
             "{businessInfo.tagline}"
           </motion.p>
@@ -128,20 +128,20 @@ const Hero = () => {
           {/* Subheading text — Hindi */}
           <motion.p
             variants={itemVariants}
-            className="text-sm xs:text-base sm:text-xl md:text-2xl text-slate-100 font-hindi font-semibold max-w-3xl mb-8 leading-relaxed text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+            className="text-xs sm:text-lg md:text-2xl text-slate-100 font-hindi font-semibold max-w-3xl mb-6 sm:mb-8 leading-relaxed text-center px-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
           >
             शादी, पार्टी एवं सभी प्रकार के शुभ अवसरों की शाही सजावट के लिए संपर्क करें।
           </motion.p>
 
-          {/* Call to Action Buttons — always side-by-side */}
+          {/* Call to Action Buttons — responsive stack on mobile, row on tablet/desktop */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-row items-center justify-center gap-3 sm:gap-4 w-full"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none px-4"
           >
             {/* Primary Call Button */}
             <a
               href={`tel:${businessInfo.phones[0]}`}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold-gradient hover:bg-gold-gradient-hover text-black font-extrabold text-xs sm:text-base md:text-lg uppercase tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.6)] hover:shadow-[0_0_45px_rgba(245,196,81,0.9)] hover:scale-105 active:scale-95 group whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold-gradient hover:bg-gold-gradient-hover text-black font-extrabold text-sm sm:text-base md:text-lg uppercase tracking-wider transition-all duration-300 animate-gold-pulse hover:scale-105 active:scale-95 group"
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:animate-bounce shrink-0" />
               <span>Call Now 📞 {businessInfo.phones[0]}</span>
@@ -154,25 +154,26 @@ const Hero = () => {
                 e.preventDefault();
                 document.querySelector('#gallery')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full border-2 border-gold-500/80 bg-black/50 hover:bg-gold-500/20 text-gold-300 font-bold text-xs sm:text-base md:text-lg tracking-wider backdrop-blur-md transition-all duration-300 hover:border-gold-400 hover:scale-105 active:scale-95 group whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border-2 border-gold-500/80 bg-black/50 hover:bg-gold-500/20 text-gold-300 font-bold text-sm sm:text-base md:text-lg tracking-wider backdrop-blur-md transition-all duration-300 hover:border-gold-400 hover:scale-105 active:scale-95 group"
             >
               <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 group-hover:scale-110 transition-transform shrink-0" />
               <span>View Gallery</span>
             </a>
           </motion.div>
 
-          {/* Highlights Pills — always 3 columns */}
+          {/* Highlights Pills — responsive grid: 1 col on small mobile, 3 cols on tablet+ */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 sm:mt-12 grid grid-cols-3 gap-2 sm:gap-3 w-full max-w-3xl"
+            className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 w-full max-w-3xl px-4"
           >
             {businessInfo.highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 rounded-2xl bg-black/60 border border-gold-500/20 backdrop-blur-sm"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-black/60 border border-gold-500/20 backdrop-blur-sm animate-float-slow"
+                style={{ animationDelay: `${idx * 0.8}s` }}
               >
-                <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 fill-gold-400 shrink-0" />
-                <span className="text-[11px] sm:text-sm font-hindi font-medium text-slate-200 leading-tight text-center">
+                <Star className="w-4 h-4 text-gold-400 fill-gold-400 shrink-0" />
+                <span className="text-xs sm:text-sm font-hindi font-medium text-slate-200 leading-tight text-center">
                   {item.title}
                 </span>
               </div>

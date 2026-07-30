@@ -23,11 +23,23 @@
   --color-dark-750: #221815;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #0a0a0a;
   color: #f1f5f9;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  /* Improves mobile scrolling behavior */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent images from ever causing horizontal overflow */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .text-gold-gradient {

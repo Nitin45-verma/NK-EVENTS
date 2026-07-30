@@ -1,19 +1,130 @@
 <!doctype html>
 <html lang="hi" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NK EVENTS | Premium Wedding & Event Decoration | बेहतरीन सजावट</title>
-    <meta name="description" content="NK EVENTS - हर पल को बनाएं यादगार. Wedding & Party Decoration, Lights Decoration, Flower Decoration, DJ System, Stage Decoration, Entry Gate Decoration." />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Devanagari:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#0a0a0a] text-slate-100 antialiased selection:bg-[#d4af37] selection:text-black overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="canonical" href="https://nkevents.in/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>NK Events - Best Wedding &amp; Party Decoration in Jaipur | Lights, Flower, DJ, Stage</title>
+  <meta name="description"
+    content="Book NK Events for the best wedding decoration, DJ setup, lights, flower &amp; stage decoration in Jaipur. Call 8003139079 today for a free quote!" />
+  <meta name="keywords"
+    content="wedding decoration Jaipur, event decoration, lights decoration, flower decoration, DJ setup, stage decoration, dulhan entry, mandap decoration, NK Events" />
+  <meta name="author" content="NK Events - Nitesh Verma" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (Facebook / WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NK Events - Best Wedding &amp; Party Decoration in Jaipur" />
+  <meta property="og:description"
+    content="शादी, पार्टी और सभी अवसरों के लिए शाही डेकोरेशन। Call 8003139079 — NK Events, Jaipur।" />
+  <meta property="og:url" content="https://nkevents.in" />
+  <meta property="og:locale" content="hi_IN" />
+  <meta property="og:image" content="https://nkevents.in/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="NK Events" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NK Events - Best Wedding &amp; Party Decoration in Jaipur" />
+  <meta name="twitter:description"
+    content="Book NK Events for wedding decoration, DJ, lights &amp; stage setup. Call 8003139079 today." />
+  <meta name="twitter:image" content="https://nkevents.in/og-image.jpg" />
+
+  <!-- Preconnect to external domains for faster resource loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <!-- Preload the hero background image (LCP element) -->
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1200"
+    imagesrcset="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=75&w=768 768w, https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1200 1200w, https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1920 1920w"
+    imagesizes="100vw" />
+
+  <!-- Google Fonts — reduced to 5 essential families -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Devanagari:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- LocalBusiness Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventPlanner",
+      "name": "NK Events",
+      "url": "https://nk-events-psi.vercel.app/",
+      "logo": "https://nk-events-psi.vercel.app/favicon.png",
+      "image": "https://nk-events-psi.vercel.app/og-image.jpg",
+      "description": "Best wedding & party decoration in Jaipur — lights, flower, DJ, stage, dulhan entry decor.",
+      "telephone": "+91-8003139079",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KAPOORWALA, Laxmi Narayan Sarovar, Kapoorwala Main Road, Panwaliya",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302029",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "26.7599695",
+        "longitude": "75.6992774"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "23:59"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/nk_electrician_149"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Nitesh Verma"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Wedding Decoration" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Lights Decoration" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Flower Decoration" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "DJ System" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Stage Decoration" }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-[#0a0a0a] text-slate-100 antialiased selection:bg-[#d4af37] selection:text-black overflow-x-hidden">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -71,7 +71,7 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             className="text-slate-300 text-sm sm:text-base font-hindi mt-3"
           >
-            शादी, सगाई, बर्थडे और सभी मांगलिक उत्सवों के लिए बेस्ट क्वालिटी डेकोरेशन।
+            Wedding decoration in Jaipur — lights, flower decor, stage decoration for wedding, DJ service & entry gate setup for every occasion.
           </motion.p>
         </div>
 
@@ -97,6 +97,8 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#120a08] via-transparent to-black/40"></div>
@@ -118,9 +120,9 @@ const Services = () => {
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-mono text-gold-400/80 uppercase tracking-widest">{service.titleHindi}</span>
                     </div>
-                    <h3 className="text-xl font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors mt-1">
+                    <h2 className="text-xl font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors mt-1">
                       {service.title}
-                    </h3>
+                    </h2>
                     <p className="text-slate-300 text-xs sm:text-sm font-sans leading-relaxed mt-2">
                       {service.shortDesc}
                     </p>
@@ -181,8 +183,8 @@ const Services = () => {
               className="relative w-full max-w-2xl bg-gradient-to-b from-[#181110] to-[#0a0a0a] border-2 border-gold-500/50 rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[90vh] overflow-y-auto"
             >
               {/* Modal Banner Image */}
-              <div className="relative h-64 w-full">
-                <img src={selectedService.image} alt={selectedService.title} className="w-full h-full object-cover" />
+              <div className="relative h-40 sm:h-64 w-full">
+                <img src={selectedService.image} alt={selectedService.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#181110] via-black/30 to-transparent"></div>
                 
                 <button
@@ -196,9 +198,9 @@ const Services = () => {
                   <span className="text-xs font-mono text-gold-400 uppercase tracking-widest bg-black/60 px-3 py-1 rounded-full border border-gold-500/30">
                     {selectedService.titleHindi}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
                     {selectedService.title}
-                  </h3>
+                  </h2>
                 </div>
               </div>
 

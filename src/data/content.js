@@ -1,12 +1,12 @@
-// ── Gallery image imports (processed & hashed by Vite) ──────────────────────
-import imgGallery1   from '../assets/gallery/gallery1.jpg';
-import imgGallery2   from '../assets/gallery/gallery2.jpg';
-import imgGallery3   from '../assets/gallery/gallery3.jpg';
-import imgGallery4   from '../assets/gallery/gallery4.jpg';
-import imgGallery5   from '../assets/gallery/gallery5.jpg';
-import imgGallery7   from '../assets/gallery/gallery7.jpg';
-import imgEntryReal  from '../assets/gallery/entry_real.jpg';
-import imgLightsReal from '../assets/gallery/lights_real.jpg';
+// ── Gallery image imports (WebP — optimized by sharp for faster loading) ─────
+import imgGallery1   from '../assets/gallery/gallery1.webp';
+import imgGallery2   from '../assets/gallery/gallery2.webp';
+import imgGallery3   from '../assets/gallery/gallery3.webp';
+import imgGallery4   from '../assets/gallery/gallery4.webp';
+import imgGallery5   from '../assets/gallery/gallery5.webp';
+import imgGallery7   from '../assets/gallery/gallery7.webp';
+import imgEntryReal  from '../assets/gallery/entry_real_clean.webp';
+import imgLightsReal from '../assets/gallery/lights_real.webp';
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const businessInfo = {
@@ -24,8 +24,8 @@ export const businessInfo = {
     { title: "उचित मूल्य", titleEng: "Fair Pricing", icon: "BadgePercent", desc: "आपके बजट में प्रीमियम और शाही सजावट का वादा।" },
   ],
   stats: [
-    { number: 500, suffix: "+", label: "सफल इवेंट्स (Events)", sub: "Successful Celebrations" },
-    { number: 5, suffix: "+", label: "वर्षों का अनुभव", sub: "Years Experience" },
+    { number: 200, suffix: "+", label: "सफल इवेंट्स (Events)", sub: "Successful Celebrations" },
+    { number: 10, suffix: "+", label: "वर्षों का अनुभव", sub: "Years Experience" },
     { number: 100, suffix: "%", label: "संतुष्ट ग्राहक", sub: "Happy Clients" },
     { number: 50, suffix: "+", label: "यूनीक थीम्स", sub: "Custom Decoration Themes" },
   ]
@@ -106,6 +106,7 @@ export const galleryItems = [
     title: "Neon Floral Stage Setup",
     category: "Stage",
     image: imgGallery1,
+    alt: "Neon floral wedding stage decoration with royal sofa setup by NK Events",
     desc: "शाही नियॉन लाइट्स और फूलों से सजा भव्य स्टेज — रॉयल सोफे के साथ परफेक्ट शादी का सेटअप।"
   },
   {
@@ -113,6 +114,7 @@ export const galleryItems = [
     title: "Yellow & Magenta Flower Stage",
     category: "Stage",
     image: imgGallery2,
+    alt: "Yellow and magenta flower wedding stage decoration with velvet sofa by NK Events",
     desc: "पीले-गुलाबी कर्टेन, रंग-बिरंगे फूलों और वेलवेट सोफे से सजा रॉयल वेडिंग स्टेज।"
   },
   {
@@ -120,6 +122,7 @@ export const galleryItems = [
     title: "Mehendi Flower Ring Decor",
     category: "Flowers",
     image: imgGallery3,
+    alt: "Rose and marigold flower ring decoration for mehendi ceremony by NK Events",
     desc: "गुलाब और गेंदे के फूलों से बनी खूबसूरत मेहंदी रिंग — हल्दी और मेहंदी सेरेमनी के लिए परफेक्ट।"
   },
   {
@@ -127,6 +130,7 @@ export const galleryItems = [
     title: "Blue LED Building Illumination",
     category: "Lights",
     image: imgGallery4,
+    alt: "Blue and purple LED building illumination lighting setup for wedding night by NK Events",
     desc: "ब्लू-पर्पल एलईडी लाइट्स से जगमगाती बिल्डिंग — नाइट सेलिब्रेशन के लिए शानदार लाइटिंग सेटअप।"
   },
   {
@@ -134,6 +138,7 @@ export const galleryItems = [
     title: "Colorful Mandap with Bulb Canopy",
     category: "Stage",
     image: imgGallery5,
+    alt: "Colorful flower mandap with warm bulb canopy decoration for wedding ceremony by NK Events",
     desc: "रंग-बिरंगे फूलों और वार्म बल्ब कैनोपी से सजा मंडप — गणेश पूजा व शादी के लिए आदर्श डेकोरेशन।"
   },
   {
@@ -141,6 +146,7 @@ export const galleryItems = [
     title: "Grand Floral Walkway & Chandelier Stage",
     category: "Dulhan Entry",
     image: imgEntryReal,
+    alt: "Grand floral walkway with chandelier for royal dulhan bride entry decoration by NK Events",
     desc: "झूमरों से सजा भव्य फूलों का वॉकवे — रॉयल दुल्हन एंट्री के लिए परफेक्ट इल्यूमिनेटेड पाथवे।"
   },
   {
@@ -148,6 +154,7 @@ export const galleryItems = [
     title: "Warm Golden String Light Illumination",
     category: "Lights",
     image: imgGallery7,
+    alt: "Warm golden string light and blue LED building illumination for wedding celebration by NK Events",
     desc: "सुनहरी वार्म स्ट्रिंग लाइट्स और ब्लू LED से जगमगाती इमारत — शादी और उत्सव के लिए शानदार लाइटिंग।"
   }
 ];

@@ -90,17 +90,21 @@ const About = () => {
           
           {/* Left Column: Image with Royal Gold Border & Badge */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="relative"
           >
             <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-gold-500/40 shadow-[0_0_30px_rgba(212,175,55,0.25)]">
               <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200"
-                alt="NK Events Mandap Decoration"
-                className="w-full h-[400px] sm:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&fm=webp&q=80&w=900"
+                srcSet="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&fm=webp&q=75&w=600 600w, https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&fm=webp&q=80&w=900 900w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="NK Events mandap and stage decoration for wedding in Jaipur"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-56 sm:h-[400px] lg:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
               
@@ -123,8 +127,8 @@ const About = () => {
 
           {/* Right Column: Description & Value Props */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="flex flex-col space-y-6"
@@ -134,19 +138,19 @@ const About = () => {
                 हर मांगलिक कार्य को यादगार बनाने का हमारा संकल्प
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
-                NK Events आपके हर खास मौके को भव्यता देने के लिए प्रतिबद्ध है। नितेश वर्मा के मार्गदर्शन में हमारी अनुभवी टीम शादी, सगाई, पार्टी, स्टेज और लाइटिंग डेकोरेशन में आपकी उम्मीदों से बेहतर परिणाम देती है।
+                NK Events is Jaipur's trusted event planner for wedding decoration, sangeet, engagement & all celebrations. Led by Nitesh Verma, our experienced team delivers stunning results — from lights and flower decor to stage setup and DJ service.
               </p>
               <p className="text-slate-400 text-sm leading-relaxed font-sans">
-                हम परंपरा और आधुनिकता के अद्भुत संगम के साथ हर मंडप और एंट्री गेट को एक महल का स्वरूप प्रदान करते हैं। हमारा लक्ष्य समय पर सेवा, पारदर्शी संवाद और हर बजट में प्रीमियम रॉयल लुक देना है।
+                हम परंपरा और आधुनिकता के अद्भुत संगम के साथ हर मंडप और एंट्री गेट को एक महल का स्वरूप प्रदान करते हैं। समय पर सेवा, पारदर्शी संवाद और हर बजट में प्रीमियम रॉयल लुक देना हमारा लक्ष्य है।
               </p>
             </div>
 
             {/* Key Features Bullet List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {[
-                "100% समय पर सेटअप डिलीवरी",
-                "कस्टम थीम्स व फ्लावर डिजाइन",
-                "उच्च गुणवत्ता साउंड व लाइट्स",
+                "वेडिंग डेकोरेशन इन जयपुर (उचित दरों में)",
+                "स्टेज डेकोरेशन फॉर वेडिंग (कस्टम थीम)",
+                "DJ सर्विस नीयर मी (Jaipur व आसपास)",
                 "पारदर्शी और उचित दरें",
               ].map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">

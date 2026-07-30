@@ -112,7 +112,7 @@ const WhyUs = () => {
                 "आपका विश्वास, हमारी पहचान"
               </h4>
               <p className="text-xs sm:text-sm text-gold-200/90 font-sans mt-0.5">
-                500 से अधिक सफल इवेंट्स और सैकड़ों संतुष्ट परिवारों का भरोसा ही हमारी ताकत है।
+                Jaipur's most trusted event planner — 200+ successful weddings & events, and hundreds of happy families.
               </p>
             </div>
           </div>

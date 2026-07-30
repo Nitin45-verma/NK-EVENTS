@@ -49,7 +49,7 @@ const Gallery = () => {
             transition={{ delay: 0.2 }}
             className="text-slate-300 text-sm sm:text-base font-hindi mt-3"
           >
-            मंडप, स्टेज, लाइटिंग, डीजे एवं एंट्री गेट डेकोरेशन के वास्तविक फोटोग्राफ्स।
+            Real photos of stage decoration for wedding, mandap, lights, DJ service & entry gate decor — all by NK Events, Jaipur.
           </motion.p>
         </div>
 
@@ -94,7 +94,9 @@ const Gallery = () => {
                 <div className="relative h-72 w-full overflow-hidden">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt || item.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
@@ -147,9 +149,11 @@ const Gallery = () => {
               className="relative z-10 max-w-4xl w-full bg-[#120a08] border-2 border-gold-500/50 rounded-3xl overflow-hidden shadow-2xl"
             >
               <div className="relative max-h-[75vh] overflow-hidden bg-black flex items-center justify-center">
-                <img
+                  <img
                   src={lightboxImage.image}
-                  alt={lightboxImage.title}
+                  alt={lightboxImage.alt || lightboxImage.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain max-h-[75vh]"
                 />
                 <button

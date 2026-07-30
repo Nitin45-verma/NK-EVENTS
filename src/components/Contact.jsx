@@ -21,17 +21,40 @@ const Contact = () => {
     if (!formData.name || !formData.phone) return;
 
     setLoading(true);
+
+    // Build a well-formatted WhatsApp message with all form details
+    const lines = [
+      `🙏 *नमस्ते NK Events!*`,
+      ``,
+      `मैं अपने इवेंट के लिए बुकिंग इनक्वायरी करना चाहता/चाहती हूँ।`,
+      ``,
+      `👤 *नाम (Name):* ${formData.name}`,
+      `📞 *मोबाइल (Phone):* ${formData.phone}`,
+      `📅 *कार्यक्रम की तारीख (Event Date):* ${formData.date || 'Not specified'}`,
+      `🎪 *सेवा का प्रकार (Service):* ${formData.service}`,
+      formData.message ? `💬 *संदेश (Message):* ${formData.message}` : '',
+      ``,
+      `_Please confirm availability and share a quote. Thank you! 🙏_`,
+    ].filter(line => line !== null).join('\n');
+
+    const waURL = `https://wa.me/${businessInfo.whatsapp}?text=${encodeURIComponent(lines)}`;
+
+    // Small delay so the user sees the loading state, then redirect + show success
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      // Trigger gold confetti burst
+
+      // Open WhatsApp in a new tab
+      window.open(waURL, '_blank', 'noopener,noreferrer');
+
+      // Gold confetti burst 🎉
       confetti({
-        particleCount: 80,
-        spread: 70,
+        particleCount: 100,
+        spread: 80,
         origin: { y: 0.6 },
         colors: ['#f5c451', '#d4af37', '#ffffff', '#4a0e2e']
       });
-    }, 1000);
+    }, 800);
   };
 
   return (
@@ -65,8 +88,8 @@ const Contact = () => {
           
           {/* Left Column: Quick Contact Cards & Socials (5 Cols) */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-6"
           >
@@ -166,10 +189,10 @@ const Contact = () => {
 
           {/* Right Column: Contact Inquiry Form (7 Cols) */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 rounded-3xl p-8 sm:p-10 bg-[#120a08] border-2 border-gold-500/30 shadow-[0_15px_40px_rgba(0,0,0,0.8)] relative"
+            className="lg:col-span-7 rounded-3xl p-6 sm:p-10 bg-[#120a08] border-2 border-gold-500/30 shadow-[0_15px_40px_rgba(0,0,0,0.8)] relative"
           >
             <h3 className="text-2xl font-serif font-bold text-white mb-2">
               बुक इनक्वायरी (Inquire For Event Decor)
@@ -190,10 +213,10 @@ const Contact = () => {
                     <CheckCircle className="w-10 h-10" />
                   </div>
                   <h4 className="text-2xl font-hindi font-bold text-white">
-                    धन्यवाद! आपकी इनक्वायरी दर्ज कर ली गई है।
+                    धन्यवाद! WhatsApp खुल गया है। 🎉
                   </h4>
                   <p className="text-sm text-gold-300/90 font-sans max-w-md mx-auto">
-                    नितेश वर्मा जी आपकी बुकिंग डिटेल्स के साथ जल्द ही कॉल करेंगे।
+                    आपकी सभी जानकारी WhatsApp पर भेज दी गई है। नितेश वर्मा जी जल्द ही reply करेंगे।
                   </p>
                   <button
                     onClick={() => {

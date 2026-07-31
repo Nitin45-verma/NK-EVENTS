@@ -147,6 +147,66 @@ img {
   font-family: 'Noto Serif Devanagari', 'Tiro Devanagari Hindi', 'Poppins', serif;
 }
 
+/* Glassmorphic Light Sweep Effect on Hover */
+.glass-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 243, 161, 0.18) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: transform 0.85s ease-in-out;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.glass-shimmer:hover::before {
+  transform: translateX(380%) skewX(-25deg);
+}
+
+/* Smooth Magnetic Hover Card Glow */
+.card-hover-glow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.card-hover-glow:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.25), 0 0 20px rgba(245, 196, 81, 0.15);
+}
+
+/* Lenis Global Smooth Scroll Settings */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

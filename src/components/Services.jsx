@@ -89,23 +89,23 @@ const Services = () => {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                whileHover={{ y: -8 }}
-                className="group relative rounded-3xl bg-[#120a08] border border-gold-500/30 overflow-hidden flex flex-col justify-between transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:border-gold-400 hover:shadow-[0_15px_40px_rgba(212,175,55,0.3)]"
+                whileHover={{ y: -10 }}
+                className="group relative rounded-3xl bg-[#120a08] border border-gold-500/30 overflow-hidden flex flex-col justify-between transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:border-gold-400 hover:shadow-[0_20px_45px_rgba(212,175,55,0.35)] glass-shimmer"
               >
                 {/* Top Image Container */}
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-52 sm:h-60 w-full overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#120a08] via-transparent to-black/40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/20 pointer-events-none"></div>
 
                   {/* Top Badge Icon */}
-                  <div className="absolute top-4 left-4 p-3 rounded-2xl bg-black/75 border border-gold-500/40 text-gold-400 backdrop-blur-md shadow-lg group-hover:bg-gold-gradient group-hover:text-black transition-all duration-300">
-                    <IconComponent className="w-6 h-6" />
+                  <div className="absolute top-4 left-4 p-3 rounded-2xl bg-black/80 border border-gold-500/40 backdrop-blur-md shadow-lg group-hover:border-gold-400 group-hover:bg-gold-500/20 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.6)] transition-all duration-300">
+                    <IconComponent className="w-6 h-6 text-gold-400 group-hover:text-gold-200 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(255,243,161,1)] transition-all duration-300" />
                   </div>
 
                   {/* Emoji Tag */}
@@ -183,9 +183,9 @@ const Services = () => {
               className="relative w-full max-w-2xl bg-gradient-to-b from-[#181110] to-[#0a0a0a] border-2 border-gold-500/50 rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[90vh] overflow-y-auto"
             >
               {/* Modal Banner Image */}
-              <div className="relative h-40 sm:h-64 w-full">
-                <img src={selectedService.image} alt={selectedService.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#181110] via-black/30 to-transparent"></div>
+              <div className="relative h-48 sm:h-72 w-full">
+                <img src={selectedService.image} alt={selectedService.title} loading="lazy" decoding="async" className="w-full h-full object-cover object-bottom" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/10 pointer-events-none"></div>
                 
                 <button
                   onClick={() => setSelectedService(null)}

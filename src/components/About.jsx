@@ -28,7 +28,7 @@ const StatCounter = ({ number, suffix, label, sub }) => {
   }, [isInView, number]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center p-5 rounded-2xl bg-gradient-to-b from-[#181110] to-[#0a0a0a] border border-gold-500/30 hover:border-gold-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] group">
+    <div ref={ref} className="flex flex-col items-center justify-center p-5 rounded-2xl bg-gradient-to-b from-[#181110] to-[#0a0a0a] border border-gold-500/30 hover:border-gold-400 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_35px_rgba(212,175,55,0.3)] glass-shimmer group">
       <div className="font-serif font-black text-4xl sm:text-5xl text-gold-gradient group-hover:scale-110 transition-transform duration-300">
         {count}{suffix}
       </div>

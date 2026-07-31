@@ -69,16 +69,15 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#d4af37]/20 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)]'
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="focus:outline-none">
-            <Logo />
+          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="focus:outline-none p-0 m-0">
+            <Logo size="normal" />
           </a>
 
           {/* Desktop Menu Links */}
@@ -90,9 +89,8 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-300 rounded-full ${
-                    isActive ? 'text-gold-400 font-semibold' : 'text-slate-300 hover:text-gold-300'
-                  }`}
+                  className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-300 rounded-full ${isActive ? 'text-gold-400 font-semibold' : 'text-slate-300 hover:text-gold-300'
+                    }`}
                 >
                   {isActive && (
                     <motion.span

@@ -1,9 +1,17 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Image as ImageIcon, Sparkles, Star, ChevronDown, Award } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { businessInfo } from '../data/content';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
+  const heroRef = useRef(null);
+  const heroBgRef = useRef(null);
+  const titleRef = useRef(null);
+
   // Fewer particles on mobile for better performance
   const particleCount = typeof window !== 'undefined' && window.innerWidth < 768 ? 12 : 30;
 
@@ -18,6 +26,29 @@ const Hero = () => {
       opacity: Math.random() * 0.7 + 0.3,
     }));
   }, [particleCount]);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    const ctx = gsap.context(() => {
+      // Parallax scroll effect on Hero Background Image (Only on desktop for performance)
+      if (!isMobile && heroBgRef.current && heroRef.current) {
+        gsap.to(heroBgRef.current, {
+          yPercent: 22,
+          scale: 1.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,17 +71,18 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Background Image with Dark & Maroon Gradients */}
-      <div className="absolute inset-0 z-0">
+    <section ref={heroRef} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+      {/* Background Image with GSAP Parallax */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
+          ref={heroBgRef}
           src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1200"
           srcSet="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=75&w=768 768w, https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1200 1200w, https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&fm=webp&q=80&w=1920 1920w"
           sizes="100vw"
           alt="NK Events Wedding Stage Background"
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-75 transition-transform duration-10000 ease-linear animate-pulse-slow"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-75 transition-transform duration-10000 ease-linear"
         />
         {/* Radial Dark Maroon & Black Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-black/60"></div>

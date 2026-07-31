@@ -2,7 +2,7 @@ import React from 'react';
 import logoImg from '../assets/logo.png';
 
 const Logo = ({ className = "", size = "normal" }) => {
-  const sizeClass = size === "large" ? "w-12 h-12" : "w-[60px] h-[60px]";
+  const sizeClass = size === "large" ? "w-12 h-12" : "w-[50px] h-[50px]";
 
   return (
     <div className={`inline-flex items-center group select-none ${className}`}>

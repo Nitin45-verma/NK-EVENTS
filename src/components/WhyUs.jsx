@@ -61,19 +61,17 @@ const WhyUs = () => {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2, type: "spring" }}
-                whileHover={{ y: -10 }}
-                className="group relative rounded-3xl p-8 bg-gradient-to-b from-[#181110] to-[#0a0a0a] border border-gold-500/30 hover:border-gold-400 flex flex-col items-center text-center transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.3)]"
+                whileHover={{ y: -12 }}
+                className="group relative rounded-3xl p-8 bg-gradient-to-b from-[#181110] to-[#0a0a0a] border border-gold-500/30 hover:border-gold-400 flex flex-col items-center text-center transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_rgba(212,175,55,0.35)] glass-shimmer"
               >
                 {/* Gold Circular Icon Badge */}
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.8 }}
-                  className="w-20 h-20 rounded-full bg-gold-gradient p-0.5 shadow-[0_0_25px_rgba(212,175,55,0.4)] mb-6 flex items-center justify-center shrink-0"
+                <div
+                  className="w-20 h-20 rounded-full bg-gold-gradient p-0.5 shadow-[0_0_25px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_40px_rgba(245,196,81,0.9)] group-hover:rotate-[360deg] group-hover:scale-110 mb-6 flex items-center justify-center shrink-0 transition-all duration-700 ease-in-out"
                 >
-                  <div className="w-full h-full rounded-full bg-[#0a0a0a] flex items-center justify-center text-gold-400 group-hover:bg-gold-gradient group-hover:text-black transition-colors duration-300">
-                    <IconComp className="w-9 h-9" />
+                  <div className="w-full h-full rounded-full bg-[#0a0a0a] group-hover:bg-gradient-to-b group-hover:from-[#251812] group-hover:to-[#0a0a0a] flex items-center justify-center transition-all duration-300">
+                    <IconComp className="w-9 h-9 text-gold-400 group-hover:text-gold-200 drop-shadow-[0_0_10px_rgba(212,175,55,0.6)] group-hover:drop-shadow-[0_0_20px_rgba(255,243,161,1)] transition-all duration-300" />
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Card Titles */}
                 <h3 className="text-2xl font-hindi font-bold text-slate-100 group-hover:text-gold-300 transition-colors">

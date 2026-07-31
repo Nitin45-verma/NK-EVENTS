@@ -1,4 +1,7 @@
 import React from 'react';
+import SmoothScroll from './components/SmoothScroll';
+import SplashScreen from './components/SplashScreen';
+import CursorGlow from './components/CursorGlow';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,27 +15,35 @@ import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-slate-100 font-sans selection:bg-gold-500 selection:text-black relative">
-      {/* Sticky Header */}
-      <Navbar />
+    <SmoothScroll>
+      <div className="min-h-screen bg-[#0a0a0a] text-slate-100 font-sans selection:bg-gold-500 selection:text-black relative">
+        {/* Golden Glowing Cursor Aura */}
+        <CursorGlow />
 
-      {/* Main Content Sections */}
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Gallery />
-        <WhyUs />
-        <Testimonials />
-        <Contact />
-      </main>
+        {/* 4.5s Full Screen Royal Splash Animation */}
+        <SplashScreen duration={4500} />
 
-      {/* Royal Footer */}
-      <Footer />
+        {/* Sticky Header */}
+        <Navbar />
 
-      {/* Floating Action Buttons */}
-      <FloatingButtons />
-    </div>
+        {/* Main Content Sections */}
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <Gallery />
+          <WhyUs />
+          <Testimonials />
+          <Contact />
+        </main>
+
+        {/* Royal Footer */}
+        <Footer />
+
+        {/* Floating Action Buttons */}
+        <FloatingButtons />
+      </div>
+    </SmoothScroll>
   );
 }
 

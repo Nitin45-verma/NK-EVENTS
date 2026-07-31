@@ -1,22 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Sparkles, X, Maximize2, PhoneCall, ExternalLink } from 'lucide-react';
+import { Camera, Sparkles, X, Maximize2, PhoneCall, ExternalLink, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { galleryItems, businessInfo } from '../data/content';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const categories = ["All", "Lights", "Flowers", "DJ", "Stage", "Dulhan Entry"];
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [zoomScale, setZoomScale] = useState(1);
+
+  const gallerySectionRef = useRef(null);
+  const galleryBgGlowRef = useRef(null);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    const ctx = gsap.context(() => {
+      if (!isMobile && galleryBgGlowRef.current && gallerySectionRef.current) {
+        gsap.to(galleryBgGlowRef.current, {
+          yPercent: 35,
+          scale: 1.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: gallerySectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    }, gallerySectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const filteredItems = activeFilter === "All"
     ? galleryItems
     : galleryItems.filter((item) => item.category === activeFilter);
 
+  const handleOpenLightbox = (item) => {
+    setZoomScale(1);
+    setLightboxImage(item);
+  };
+
+  const handleCloseLightbox = () => {
+    setZoomScale(1);
+    setLightboxImage(null);
+  };
+
+  const handleZoomIn = (e) => {
+    e.stopPropagation();
+    setZoomScale((prev) => Math.min(prev + 0.4, 2.5));
+  };
+
+  const handleZoomOut = (e) => {
+    e.stopPropagation();
+    setZoomScale((prev) => Math.max(prev - 0.4, 1));
+  };
+
+  const handleResetZoom = (e) => {
+    e.stopPropagation();
+    setZoomScale(1);
+  };
+
   return (
-    <section id="gallery" className="relative py-24 bg-gradient-to-b from-[#0a0a0a] via-[#120a08] to-[#0a0a0a] overflow-hidden">
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section ref={gallerySectionRef} id="gallery" className="relative py-24 bg-gradient-to-b from-[#0a0a0a] via-[#120a08] to-[#0a0a0a] overflow-hidden">
+      {/* Background Decorative Glow with GSAP Parallax */}
+      <div ref={galleryBgGlowRef} className="absolute top-1/3 right-0 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -86,9 +141,10 @@ const Gallery = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
+                whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.4 }}
-                className="group relative rounded-3xl overflow-hidden bg-[#120a08] border border-gold-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)] cursor-pointer hover:border-gold-400"
-                onClick={() => setLightboxImage(item)}
+                className="group relative rounded-3xl overflow-hidden bg-[#120a08] border border-gold-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)] cursor-pointer hover:border-gold-400 hover:shadow-[0_15px_35px_rgba(212,175,55,0.3)] transition-all"
+                onClick={() => handleOpenLightbox(item)}
               >
                 {/* Image */}
                 <div className="relative h-72 w-full overflow-hidden">
@@ -128,40 +184,86 @@ const Gallery = () => {
 
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal with Spring Zoom In / Zoom Out */}
       <AnimatePresence>
         {lightboxImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div
+            key="lightbox-modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+          >
             {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setLightboxImage(null)}
+            <div
+              onClick={handleCloseLightbox}
               className="absolute inset-0 bg-black/90 backdrop-blur-md"
             />
 
-            {/* Modal Content */}
+            {/* Modal Content with Spring Zoom In & Out */}
             <motion.div
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              className="relative z-10 max-w-4xl w-full bg-[#120a08] border-2 border-gold-500/50 rounded-3xl overflow-hidden shadow-2xl"
+              key="lightbox-modal-card"
+              initial={{ scale: 0.3, opacity: 0, y: 40 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.3, opacity: 0, y: 40 }}
+              transition={{ type: "spring", damping: 22, stiffness: 300 }}
+              className="relative z-10 max-w-4xl w-full bg-[#120a08] border-2 border-gold-500/50 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(212,175,55,0.35)] flex flex-col"
             >
-              <div className="relative max-h-[75vh] overflow-hidden bg-black flex items-center justify-center">
-                  <img
+              {/* Top Controls Toolbar */}
+              <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+                <button
+                  onClick={handleZoomIn}
+                  title="Zoom In"
+                  className="p-2.5 rounded-full bg-black/80 text-gold-300 hover:bg-gold-500/30 hover:text-white border border-gold-500/40 backdrop-blur-md transition-all active:scale-90"
+                >
+                  <ZoomIn className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleZoomOut}
+                  title="Zoom Out"
+                  className="p-2.5 rounded-full bg-black/80 text-gold-300 hover:bg-gold-500/30 hover:text-white border border-gold-500/40 backdrop-blur-md transition-all active:scale-90"
+                >
+                  <ZoomOut className="w-5 h-5" />
+                </button>
+                {zoomScale > 1 && (
+                  <button
+                    onClick={handleResetZoom}
+                    title="Reset Zoom"
+                    className="p-2.5 rounded-full bg-black/80 text-gold-300 hover:bg-gold-500/30 hover:text-white border border-gold-500/40 backdrop-blur-md transition-all active:scale-90"
+                  >
+                    <RotateCcw className="w-5 h-5" />
+                  </button>
+                )}
+                <button
+                  onClick={handleCloseLightbox}
+                  title="Close"
+                  className="p-2.5 rounded-full bg-black/80 text-gold-400 hover:bg-gold-500/30 hover:text-white border border-gold-500/40 backdrop-blur-md transition-all active:scale-90"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Image Preview Window with Animated Zoom */}
+              <div
+                onClick={() => setZoomScale((prev) => (prev === 1 ? 1.8 : 1))}
+                className="relative max-h-[70vh] min-h-[300px] overflow-hidden bg-black flex items-center justify-center p-4 cursor-zoom-in group select-none"
+              >
+                <motion.img
+                  key={lightboxImage.image}
                   src={lightboxImage.image}
                   alt={lightboxImage.alt || lightboxImage.title}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-contain max-h-[75vh]"
+                  animate={{ scale: zoomScale }}
+                  transition={{ type: "spring", damping: 20, stiffness: 220 }}
+                  className="w-full h-full object-contain max-h-[68vh] transition-transform"
                 />
-                <button
-                  onClick={() => setLightboxImage(null)}
-                  className="absolute top-4 right-4 p-3 rounded-full bg-black/75 text-gold-400 hover:bg-gold-500/30 border border-gold-500/40 transition-colors"
-                >
-                  <X className="w-6 h-6" />
-                </button>
+
+                {/* Subtle Click Hint Badge */}
+                <div className="absolute bottom-3 left-4 px-3 py-1 rounded-full bg-black/60 border border-gold-500/30 text-[10px] text-gold-300 backdrop-blur-md pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+                  {zoomScale > 1 ? `Zoomed ${zoomScale.toFixed(1)}x (Click to Reset)` : 'Click image to Zoom In (+)'}
+                </div>
               </div>
 
               {/* Lightbox Footer */}
@@ -187,7 +289,7 @@ const Gallery = () => {
                 </a>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>
